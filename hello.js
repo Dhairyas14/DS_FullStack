@@ -11,7 +11,9 @@ r1.question('Please enter your name: ', (name) =>{
     r1.question('Pleaser enter your email: ', (email)=>{
         if (name.trim( ) === '' || email.trim() === ''){
             console.log('Both name and email are mandatory fields.');
-        } else{
+        } else if( !email.includes('@')) {
+            console.log('Invalid email address. It must contain the "@" symbol');
+        }  else{
             console.log('User details:');
             console.log('Name:', name);
             console.log('Email', email);
